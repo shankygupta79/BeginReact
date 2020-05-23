@@ -1,3 +1,3 @@
-[submodule "BeginReactSub"]
-	path = BeginReactSub
+[submodule "sample"]
+	path = sample
 	url = https://github.com/shankygupta79/BeginReactSub
