@@ -1,0 +1,2 @@
+MAKE 2 servers one for react 
+front end and one for usual express backedn
