@@ -14,19 +14,17 @@ app.use(session({
     saveUninitialized: false,
     secret: 'something very very secret'
   }))
-app.use(cors({
-    origin: 'http://localhost:3000/'
-}));  
+app.use(cors());  
 app.use(express.json())
 app.use(express.urlencoded({extended: true}))
-app.get('/api/customers',(req,res) =>{
+app.get('/api/customers',cors(),(req,res) =>{
     const customers=[
         {id:1,name:'hey1'},
         {id:2,name:'hey2'},
     ];
     res.json(customers);
 });
-app.post('/api/add', function (req, res) {
+app.post('/api/add',cors(),function (req, res) {
     console.log("MY");
     console.log(req.body.id);
     console.log(req.body.name)
