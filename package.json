@@ -6,9 +6,9 @@
   "scripts": {
     "start": "node server.js",
     "server": "nodemon server.js",
-    "sample": "npm start --prefix sample",
-    "dev": "concurrently \"npm run server\" \"npm run sample\"",
-    "sample-install": "cd sample && npm install",
+    "BeginReactSub": "npm start --prefix BeginReactSub",
+    "dev": "concurrently \"npm run server\" \"npm run BeginReactSub\"",
+    "BeginReactSub-install": "cd sample && npm install",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
