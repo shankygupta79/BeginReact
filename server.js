@@ -24,6 +24,12 @@ app.get('/api/customers',cors(),(req,res) =>{
     ];
     res.json(customers);
 });
+app.get('/',cors(),(req,res) =>{
+    res.sendFile(path.join(__dirname,'./file.html'))
+});
+app.get('/script/file.js',cors(),(req,res) =>{
+    res.sendFile(path.join(__dirname,'./file.js'))
+});
 app.post('/api/add',cors(),function (req, res) {
     console.log("MY");
     console.log(req.body.id);
