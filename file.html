@@ -6,15 +6,16 @@
 <body>
     <div id="Mprod">
     <div id="app" >
-    <app-user post-title="hello!" ab="40"></app-user>
+    <app-user post-title="Shubham !" ab=Foty></app-user>
    
     <button >Update</button>
-    </div>
+    </div><br><br>
+    <h1>DRAG AND ARRANGE IN RIGHT ORDER</h1>
     <draggable v-model="myArray" group="people" @start="drag=true" @end="drag=false">
       <div v-if="flag" v-for="element in myArray" class="card" :key="element.id">{{element.name}}</div>
    </draggable>
    <div v-if="!flag" v-for="element in myArray" class="card" :key="element.id">{{element.name}}</div>
-   <button type="button" @click="save()" class="btn btn-warning">Save this Sequence in right order</button>
+   <button type="button" @click="save()" class="btn btn-warning">Save your Sequence</button>
     </div>
 <script src="https://unpkg.com/vue@2.6.11/dist/vue.js"></script>
 <script src="./file.js"></script>
@@ -27,7 +28,7 @@
     var log=new Vue({
       el:"#Mprod",
       data:{
-        myArray:[{id:1,name:'DRAG ME I AM B '},{id:2,name:'DRAG ME I AM A '},{id:3,name:'DRAG ME I AM C '}],
+        myArray:[{id:1,name:' I AM B '},{id:1,name:' I AM D '},{id:1,name:' I AM E '},{id:2,name:' I AM A '},{id:3,name:' I AM C '}],
         flag:true,
       },
       created:function(){
