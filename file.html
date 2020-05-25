@@ -10,22 +10,46 @@
    
     <button >Update</button>
     </div>
+    <draggable v-model="myArray" group="people" @start="drag=true" @end="drag=false">
+      <div v-if="flag" v-for="element in myArray" class="card" :key="element.id">{{element.name}}</div>
+   </draggable>
+   <div v-if="!flag" v-for="element in myArray" class="card" :key="element.id">{{element.name}}</div>
+   <button type="button" @click="save()" class="btn btn-warning">Save this Sequence in right order</button>
     </div>
-
 <script src="https://unpkg.com/vue@2.6.11/dist/vue.js"></script>
 <script src="./file.js"></script>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.2/vue.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sortablejs@1.8.4/Sortable.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Vue.Draggable/2.20.0/vuedraggable.umd.min.js"></script>
+ 
 <script>
     var log=new Vue({
       el:"#Mprod",
       data:{
-
+        myArray:[{id:1,name:'DRAG ME I AM B '},{id:2,name:'DRAG ME I AM A '},{id:3,name:'DRAG ME I AM C '}],
+        flag:true,
       },
       created:function(){
+
       },
       methods:{
+        save(){
+          console.log(this.myArray);
+          this.flag=false;
+        }
       } 
     })    
 </script>
+<style>
+  .card{
+    border-style: groove;
+    font-size: 18px;
+    width: 250px;
+    padding: 10px;
+    background-color: whitesmoke
+  }
+</style>
 </body>
 
 </html>

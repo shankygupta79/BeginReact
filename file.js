@@ -6,7 +6,7 @@ Vue.component('app-user',{
     methods:{
      load:function(){
         console.log(this.$props.ab)
-        this.$props.ab=this.$props.ab+"hey2";
+        this.abc=this.$props.ab+"hey2";
     }
     },
     data:
@@ -17,7 +17,7 @@ Vue.component('app-user',{
     
         },
     
-    template:'<h1>Hello World {{rate}}  {{postTitle}} {{ab}}</h1>',
+    template:'<h1>Hello World {{rate}}  {{postTitle}} {{abc}}</h1>',
 
 });
 new Vue({
